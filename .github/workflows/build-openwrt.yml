@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Lean-lede
+name: Build openwrt
 
 on:
   repository_dispatch:
