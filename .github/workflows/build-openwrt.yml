@@ -70,7 +70,14 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: |
+        cd openwrt && ./scripts/feeds update -a
+        cd feeds/luci/themes
+        rm -rf luci-theme-argon
+        git clone https://github.com/jerrykuku/luci-theme-argon.git -b 18.06
+        cd ..
+        cd ..
+        cd ..
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a -f
