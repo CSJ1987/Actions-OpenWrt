@@ -14,3 +14,5 @@
 sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
 # 去除dockerd校验
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/g' feeds/packages/utils/dockerd/Makefile
+# ttyd以root直接登录
+sed -i 's/login/login -f root/g' feeds/packages/utils/ttyd/files/ttyd.config
