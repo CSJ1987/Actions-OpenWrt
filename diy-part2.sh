@@ -26,3 +26,6 @@ sed -i 's/http/https/g' feeds/luci/applications/luci-app-netdata/luasrc/view/net
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+# UBOOT编译错误
+sed -i '/^UBOOT_TARGETS := rk3528-evb rk3588-evb/s/^/#/' package/boot/uboot-rk35xx/Makefile
