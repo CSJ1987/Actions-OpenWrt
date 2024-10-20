@@ -77,9 +77,9 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-#        cd package/lean
-#        git clone https://github.com/jerrykuku/luci-app-argon-config
-#        cd ../..
+        cd package/lean
+        git clone https://github.com/jerrykuku/luci-app-argon-config
+        cd ../..
 #        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
 
     - name: Update feeds
