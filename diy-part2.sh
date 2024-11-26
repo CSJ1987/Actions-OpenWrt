@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/luci2/bin/config_generate
 
 # 去除dockerd校验
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/g' feeds/packages/utils/dockerd/Makefile
@@ -25,4 +25,4 @@ sed -i 's/http/https/g' feeds/luci/applications/luci-app-netdata/luasrc/view/net
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/luci2/bin/config_generate
