@@ -18,9 +18,3 @@ sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/luci2/bin/config_generate
 
 # ttyd以root直接登录
 sed -i 's/login/login -f root/g' feeds/packages/utils/ttyd/files/ttyd.config
-
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/luci2/bin/config_generate
