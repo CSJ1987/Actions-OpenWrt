@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/luci2/bin/config_generate
 
 # 去除dockerd校验
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/g' feeds/packages/utils/dockerd/Makefile
@@ -21,11 +21,5 @@ sed -i 's/+libjson-c/+libjson-c +libopenssl/g' feeds/packages/admin/netdata/Make
 sed -i 's/disable-https/enable-https/g' feeds/packages/admin/netdata/Makefile
 sed -i 's/http/https/g' feeds/luci/applications/luci-app-netdata/luasrc/view/netdata.htm
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-
 # UBOOT编译错误
-sed -i '/^UBOOT_TARGETS := rk3528-evb rk3588-evb/s/^/#/' package/boot/uboot-rk35xx/Makefile
+#sed -i '/^UBOOT_TARGETS := rk3528-evb rk3588-evb/s/^/#/' package/boot/uboot-rk35xx/Makefile
