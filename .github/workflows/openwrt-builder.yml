@@ -36,24 +36,25 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: 释放磁盘空间
-      uses: jlumbroso/free-disk-space@main
-      with:
+#    - name: 释放磁盘空间
+#      uses: jlumbroso/free-disk-space@main
+#      with:
 #       this might remove tools that are actually needed,
 #       if set to "true" but frees about 6 GB
-        tool-cache: true
+#        tool-cache: true
 #       all of these default to true, but feel free to set to
 #       "false" if necessary for your workflow
-        android: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
+#        android: true
+#        dotnet: true
+#        haskell: true
+#        large-packages: true
+#        swap-storage: true
 
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
         sudo docker image prune --all --force
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL raw.githubusercontent.com/CSJ1987/openwrt-list/master/depends-ubuntu-2004)
