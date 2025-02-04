@@ -33,9 +33,6 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-      
     - name: Before freeing up disk space
       run: |
         echo "Before freeing up disk space"
@@ -81,7 +78,10 @@ jobs:
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
-
+        
+    - name: Checkout
+      uses: actions/checkout@main
+      
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
