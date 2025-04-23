@@ -77,12 +77,19 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
         cd package/lean
         git clone https://github.com/jerrykuku/luci-app-argon-config
+        git clone https://github.com/sirpdboy/luci-app-kucat-config
         cd ../..
 #        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
 
     - name: Update feeds
       run: |
         cd openwrt && ./scripts/feeds update -a
+        cd feeds/luci/themes
+        git clone https://github.com/sirpdboy/luci-theme-kucat
+        cd luci-theme-kucat/
+        rm -rf *.md
+        cd luci-theme-kucat/ && mv * .. && cd ..
+        rm -rf luci-theme-kucat/ && cd ../../../..
 #        WORKINGDIR="`pwd`/feeds/packages/net/smartdns"
 #        mkdir $WORKINGDIR -p
 #        rm $WORKINGDIR/* -fr
