@@ -84,12 +84,6 @@ jobs:
     - name: Update feeds
       run: |
         cd openwrt && ./scripts/feeds update -a
-        cd feeds/luci/themes
-        git clone https://github.com/sirpdboy/luci-theme-kucat
-        cd luci-theme-kucat/
-        rm -rf *.md
-        cd luci-theme-kucat/ && mv * .. && cd ..
-        rm -rf luci-theme-kucat/ && cd ../../../..
 #        WORKINGDIR="`pwd`/feeds/packages/net/smartdns"
 #        mkdir $WORKINGDIR -p
 #        rm $WORKINGDIR/* -fr
