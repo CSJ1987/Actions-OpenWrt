@@ -127,6 +127,15 @@ jobs:
 #        sudo mkdir -p /workdir
 #        sudo chown $USER:$GROUPS /workdir
 
+    - name: Clean up disk space
+      run: |
+        sudo apt-get clean
+        sudo rm -rf /tmp/*
+        sudo rm -rf ~/.cache
+
+    - name: Check available disk space
+      run: df -h
+
     - name: Clone source code
       working-directory: /workdir
       run: |
