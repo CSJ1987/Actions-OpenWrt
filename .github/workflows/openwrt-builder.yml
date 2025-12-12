@@ -158,6 +158,7 @@ jobs:
         cd package/lean
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         git clone https://github.com/sirpdboy/luci-app-kucat-config
+        git clone https://github.com/sirpdboy/luci-theme-kucat.git
         cd ../..
 
     - name: Update feeds
