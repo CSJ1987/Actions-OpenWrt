@@ -76,7 +76,6 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
         cd package/lean
-        git clone https://github.com/jerrykuku/luci-app-argon-config
         git clone https://github.com/sirpdboy/luci-app-kucat-config
         git clone https://github.com/sirpdboy/luci-theme-kucat.git
         cd ../..
